@@ -14,7 +14,25 @@ const showCountry = countries => {
 }
 
 
-const getHtmlCountrt = country => {
+const getHtmlCountrt = ({ name, flags }) => {
+    return `
+    <div class='mini'>
+    <h2>${name.common}</h> </br>
+    <img class='width' src='${flags.png}' > </br>
+    
+    </div>
+    `
+
+    // const { name, flags } = country
+
+    // return `
+    // <div class='mini'>
+    // <h2>${name.common}</h> </br>
+    // <img class='width' src='${flags.png}' > </br>
+    // <h2>${country.subregion}</h>
+    // </div>
+    // `
+
     // return `
     // <div class='mini'>
     // <h2>${country.name.common}</h> </br>
@@ -22,16 +40,6 @@ const getHtmlCountrt = country => {
     // <h2>${country.subregion}</h>
     // </div>
     // `
-
-    const { name, flags } = country
-
-    return `
-    <div class='mini'>
-    <h2>${name.common}</h> </br>
-    <img class='width' src='${flags.png}' > </br>
-    <h2>${country.subregion}</h>
-    </div>
-    `
 }
 
 loadingCountries()
