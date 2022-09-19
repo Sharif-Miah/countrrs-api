@@ -10,14 +10,15 @@ const showCountry = countries => {
     const content = countries.map(country => getHtmlCountrt(country))
     // console.log(content[0]);
     const container = document.getElementById('api-container');
-    container.innerHTML = content
+    container.innerHTML = content.join(' ')
 }
 
 
 const getHtmlCountrt = country => {
     return `
-    <div>
-    <h2>${country.name.common}</h>
+    <div class='mini'>
+    <h2>${country.name.common}</h> </br>
+    <img class='width' src='${country.flags.png}' >
     </div>
     
     `
